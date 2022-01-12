@@ -1,0 +1,121 @@
+.dish-wrapper{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-around;
+  }
+img{
+    width: 100%;
+    height: auto;
+}
+.name{
+    text-align: center;
+    font-size: 1.2vw;
+}
+.kitchen{
+    text-align: center;
+    font-size: 1.2vw;
+}
+.info{
+    text-align: center;
+    font-size: 1.2vw;
+}
+.cost{
+    text-align: center;
+    font-size: 2vw;
+}
+.card{
+    background-color: rgba(255, 228, 196, 0.212);
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 3px 3px;
+    height: 640px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+}
+
+.description{
+    text-align: center;
+}
+
+.buttons-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plus{
+    width: 30px;
+    height: 30px;
+    background-color: green;
+    margin: 5px;
+    margin-bottom: 20px;
+}
+
+.con{
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    margin: 5px;
+    margin-bottom: 20px;
+}
+
+.dish-info{
+    height: 60px;
+    font-size: 3vw;
+    background-color: orange;
+    margin-bottom: 20px;
+    padding: 10px;
+    display: flex;
+}
+
+.delete{
+    width:60px;
+    align-self: center;
+}
+
+
+.form-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.suggestDish{
+    margin-left: auto;
+    width: 150px;
+    height: 60px;
+    position: relative;
+}
+
+.text-info{
+    margin-left: auto;
+}
+
+.sugBtn{
+    width: 150px;
+    height: 60px;
+    position: absolute;
+}
+
+.pagination-filters{
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+select{
+    height: 20px;
+}
+
+.pages{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.page{
+    padding: 7px;
+}

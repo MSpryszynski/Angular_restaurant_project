@@ -1,0 +1,52 @@
+<body>
+    <ng-container *ngFor='let o of opinions'>
+        <ng-container *ngIf="o.dishName==dishName">
+            <div class="opinions-wrapper">
+                <h4>{{o.dishName}}</h4>
+                <div class="nickdate">
+                    <div class="nick">{{o.nick}}</div>
+                    <div>{{o.date}}</div>
+                </div>
+                <div>{{o.name}}</div>
+                <p>{{o.opinion}}</p>
+            </div>
+        </ng-container>
+    </ng-container>
+    <h2>Opinie: </h2>
+    <div class="dish-wrapper">
+        <ng-container *ngFor='let dish of dishes; let i = index'>
+            <ng-container *ngIf="dish.dishName==dishName">
+                <div class="grid">
+                    <div class="main">
+                        <img src={{dish.img}}>
+                        <p class="name"> {{dish.dishName | uppercase}}</p>
+                        <p class="kitchen"> {{dish.kitchen | uppercase}}</p>
+                        <p class="type">TYP:  {{dish.type | uppercase}}</p>
+                        <p class="cost">{{dish.price}}$</p>
+                        <div class="buttons-container">
+                            <button class="plus"(click)="addDish(i)" [hidden]="dish.numberOfDishes == 0">+</button>
+                            <button class="con"(click)="removeDish(i)" [hidden]="dish.numberOfDishes == maxAmountOfDishes[i]">-</button>
+                        </div>
+                    </div> 
+                    <div>
+                        <p class="description">{{dish.description}}</p>
+                        <div class="form">
+                            <form [formGroup]="modelForm" (ngSubmit)="onSubmit(modelForm)">
+                                <h4 class="form-header">Dodaj recenzję:</h4>
+                                <label>Pseudonim: </label> <input name="nick" type="string" formControlName="nick" />
+                                <label>Nazwa: </label> <input name="name" type="string" formControlName="name" />
+                                <label>Opinia: (50-500 znaków)</label> <textarea name="opinion" type="string" formControlName="opinion" class="opinion"></textarea>
+                                <label>Data: </label> <input name="date" type="date" formControlName="date" class="date"/>
+                                <button class="add" type="submit">Add opinion</button>
+                            </form>
+                            <img src="../assets/kucharz.jpg">
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container>
+    </div>
+</body>
+
+
+

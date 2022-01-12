@@ -1,0 +1,58 @@
+<div class="dish-info" [ngStyle]="{'background-color':changeBackground() ? 'blue': 'orange'}">
+  <div class="text-info">Zamówione dania: {{sumOfDishes}}</div>
+  <a class="suggestDish" routerLink="/form"><button class="sugBtn">Brak wymarzonego posiłku? Dodaj go!</button></a>
+</div>
+<div class="dish-wrapper">
+  <div class="pagination-filters">
+    <app-filters [minimalPrice]="minimalPrice" [maximalPrice]="maximalPrice" [types]="TypesToSendToFilter" [categories]="CategoriesToSendToFilter"
+    (newMinPrice)="newMinPriceFromFilter($event)"
+    (newMaxPrice)="newMaxPriceFromFilter($event)" 
+    (newTypes)="newTypes($event)"
+    (newCategories)="newCategories($event)">
+    </app-filters>
+    <div>
+    Liczba potraw:
+      <select [(ngModel)]="selectedPagination" (change) = "updatePagination()">
+        <option>5</option>
+        <option>8</option>
+        <option>12</option>
+      </select>
+    </div>
+    <!-- {{selectedPagination}}
+    {{fails}}
+    {{dishes.length}}
+    {{pageNumber}}
+    {{Pages}} -->
+    {{countPagination()}}
+  </div>
+    <ng-container *ngFor='let dish of dishes; let i = index'>
+      <ng-container *ngIf="useFilters(dish)?true:changeP(i)">
+        <ng-container *ngIf="(dishNumbers[i] <= countPagination())&& dishNumbers[i] > selectedPagination*Page">
+          <div class="card" [ngStyle]="{'border': minPrice(dish.price) ? '3.5px solid green': maxPrice(dish.price) ? '3.5px solid red': 'none' }">
+            <div class="card-ceil">
+              <div class="photo"[ngStyle]="{'opacity':changeOpacity(dish.numberOfDishes) ? 0.5: 1}">
+                <a routerLink="/mainpage/{{dish.dishName}}"><img src={{dish.img}}></a>
+                <p class="name"> {{dish.dishName | uppercase}}</p> 
+                <p class="kitchen"> {{dish.kitchen | uppercase}}</p>
+                <p class="description">{{dish.description}}</p>
+                <p class="cost">{{dish.price}}$</p>
+                <p class="info" [hidden]="dish.numberOfDishes != maxAmountOfDishes[i]">Warto rozważyć</p>
+                <p class="info" [hidden]="dish.numberOfDishes == maxAmountOfDishes[i]">Dobry wybór!</p>
+              </div>
+            </div>
+            <div class="buttons-container">
+                <button class="plus"(click)="addDish(i)" [hidden]="dish.numberOfDishes == 0">+</button>
+                <button class="con"(click)="removeDish(i)" [hidden]="dish.numberOfDishes == maxAmountOfDishes[i]">-</button>
+            </div>
+            <button class="delete" (click)="deleteDish(i)">usuń</button>
+          </div>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+</div>
+<div class="pages">
+  Strona:
+  <ng-container *ngFor="let page of Pages">
+    <div class="page" (click)="changePage(page-1)" [ngStyle]="{'color': page-1==Page ? 'red' : (page-1!=Page? 'black' : null) }">{{page}}</div>
+  </ng-container>
+</div>

@@ -1,0 +1,38 @@
+img {
+    width: 25vw;
+    height: auto;
+}
+
+.body{
+    display: flex;
+    align-items: center;
+    border-bottom: solid black 1px;
+    flex-direction: row;
+    justify-content: center;
+}
+.info{
+    margin-right: 20px;
+    font-size: 2vw;
+    margin-left: auto;
+}
+a{
+    margin: auto;
+}
+
+.menu{
+    width: 15vw;
+    height: auto;
+}
+
+.map{
+    width: 50vw;
+    height: auto;
+}
+
+.map-wrap{
+    display: flex;
+    justify-content: center;
+}
+h2{
+    text-align: center;
+}

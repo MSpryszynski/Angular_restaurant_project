@@ -1,0 +1,14 @@
+<div class="body">
+    <a routerLink="/mainpage"><img class="menu" src="../assets/menu.jpg" (click)="mainRoute()"></a>
+    <a routerLink=""><img src="../assets/logo.png" (click) = "startRoute()"></a>
+    <div class="info">
+        <div>kontakt:</div>
+        <div class="mail">restaurant@gmail.com</div>
+        <div class="phone">telefon: 777 666 777</div>
+    </div>
+</div>
+<h2 *ngIf="route == 'http://localhost:4200/'">Nasza lokalizacja: </h2>
+<div class="map-wrap">
+    <img class="map" src="../assets/map.jpg" *ngIf="route=='http://localhost:4200/'">
+</div>
+<router-outlet></router-outlet>

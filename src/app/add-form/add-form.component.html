@@ -1,0 +1,15 @@
+<div class="form">
+  <p class="form-header">Dodaj danie</p>
+    <form [formGroup]="modelForm" (ngSubmit)="onSubmit(modelForm)">
+      <label>DishName: </label> <input name="dishName" type="string" formControlName="dishName" />
+      <label>Kitchen: </label> <input name="kitchen" type="string" formControlName="kitchen" />
+      <label>Type: </label> <input name="type" type="string" formControlName="type" />
+      <label>Category: </label> <input name="category" type="string" formControlName="category" />
+      <label>Ingredients: </label> <input name="ingerdients" type="string" formControlName="ingredients" />
+      <label>numberOfDishes: </label> <input name="numberOfDishes" type="number" formControlName="numberOfDishes">
+      <label>Price: </label> <input name="price" type="number" formControlName="price">
+      <label>Description: </label> <input name="description" type="string" formControlName="description">
+      <label>img: </label> <input name="img" type="string" formControlName="img">
+      <button type="submit">Add Dish</button>
+    </form>
+  </div>

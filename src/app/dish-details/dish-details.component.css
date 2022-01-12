@@ -1,0 +1,116 @@
+img{
+    width: 100%;
+    height: auto;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    border-top: solid orange 4px;
+    border-bottom: solid orange 4px;
+}
+
+.main{
+    border-right: solid orange 4px;
+}
+.name{
+    font-size: 1.2vw;
+    text-align: center;
+}
+.kitchen{
+    text-align: center;
+    font-size: 1.2vw;
+}
+.type{
+    text-align: center;
+    font-size: 1.2vw;
+}
+.info{
+    text-align: center;
+    font-size: 1.2vw;
+}
+.cost{
+    text-align: center;
+    font-size: 2vw;
+}
+
+
+.description{
+    text-align: center;
+    font-size: 1.4vw;
+    padding: 40px;
+    border-bottom: solid orange 4px;
+}
+
+.buttons-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plus{
+    width: 30px;
+    height: 30px;
+    background-color: green;
+    margin: 5px;
+    margin-bottom: 20px;
+}
+
+.con{
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    margin: 5px;
+    margin-bottom: 20px;
+}
+.form{
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+}
+.date{
+    width: 12vw;
+}
+
+.opinion{
+    height: 140px;
+}
+
+.add{
+    width: 12vw;
+    align-self: center;
+}
+
+
+body{
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+}
+
+.opinions{
+    margin-left: 30px;
+}
+
+.nickdate{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.nick{
+    padding-right: 20px;
+    font-weight: 700;
+}
+
+.opinions-wrapper{
+    padding: 20px;
+    border-bottom:solid orange 4px ;
+}
+
+h2{
+    margin-left: 20px;
+}
