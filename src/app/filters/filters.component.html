@@ -1,5 +1,5 @@
 <p>Wybierz coś dla siebie:)</p>
-<p>Minimal Price</p>
+<p>Min Price</p>
 <input type="range" name="minPrice" min={{minimalPrice}} max={{maximalPrice}} (change)="changeMin($event)">
 <div class="subPrice">
   <p class="minPrice">{{minimalPrice}}$</p>
@@ -7,7 +7,7 @@
   <p class="maxPrice">{{maximalPrice}}$</p>
 </div>
 
-<p>Maximus Price</p>
+<p>Max Price</p>
 <input type="range" name="maxPrice" min={{minimalPrice}} max={{maximalPrice}} value={{maximalPrice}} (change)="changeMax($event)" >
 <div class="subPrice">
   <p class="minPrice">{{minimalPrice}}</p>
